@@ -1,0 +1,30 @@
+﻿<?php session_start();
+$_SESSION['view'];
+$_SESSION['identy'];
+?>
+<html>
+	<head>
+		<link rel="stylesheet" href="login/login.css">
+		<meta charset="utf-8"/>
+	</head>
+	<body>
+	<div id="mainpage">
+		<header>
+			<img src="login/welcome.png">
+			<img src="login/logo.png" alt="">
+		</header>
+		
+			<div id="input">
+				<form action="login.php" method="post">	
+							<input type="text" name="memberID" value="账号" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '账号';}">
+							<input type="password" name="psd" value="Password"onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}">	
+							<input id="submit" type="submit" value="登录">
+				</form>	
+			</div>
+
+			<div id="otherChoices">
+				<a id="a1" href="forget">忘记密码</a>
+			</div>
+	</div>
+	</body>
+</html>

@@ -1,11 +1,11 @@
-﻿<?php
+<?php
 $temp=(int)date("Ymdhis");
 function R()
 {
 	$b=23333;
 	$c=127;
 	global $temp;
-	$an=($temp*b+c)%65535;
+	$an=($temp*$b+$c)%65535;
 	$temp=$an;
 	return $an;
 }
@@ -18,20 +18,7 @@ function viewcode()
 		$num .= (string)(R()%9);
 	}
 }
-// 定义变量并默认设置为空值
-$phonenumber = $code="";
-
-if ($_SERVER["REQUEST_METHOD"] == "POST")
-{
-   $phonenumber = test_input($_POST["phonenumber"]);
-   $code = test_input($_POST["code"]);
-   global $num;
-   print_r($num);
-   if($code==$num)
-	   echo '<script>alert("验证成功");</script>';
-   else
-	   echo '<script>alert("验证失败");</script>';
-}
+viewcode();
 
 function test_input($data)
 {
@@ -84,7 +71,7 @@ function test_input($data)
 <input type="text" id="phonenumber" name="phonenumber" value="手机号码" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '手机号码';}" >
 </td>
 <td>
-<input type="button" id="send"name="send" value="发送验证码">
+<input type="button" id="send" name="send" value="发送验证码">
 </td>
 </tr>
 <tr>
@@ -96,6 +83,18 @@ function test_input($data)
 </tr>
 </table>
 </form>
-<div id="n"></div>
 </body>
 </html>
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST")
+{
+   $phonenumber = isset($_POST["phonenumber"])?test_input($_POST["phonenumber"]):"";
+   $code = isset($_POST["code"])?test_input($_POST["code"]):"";
+   global $num;
+   print_r($num);
+   if($code==$num)
+	   echo '<script>alert("验证成功");</script>';
+   else
+	   echo '<script>alert("验证失败");</script>';
+}
+?>
