@@ -1,0 +1,33 @@
+@charset "utf-8";
+*{
+	padding:0;
+	margin:0;
+    font-size:46px;
+}
+ #container {
+	 width:1080px;
+	 height:1800px;
+	 margin:0 auto;
+}                                 //∂•¿∏æ”÷–
+.div1{
+	text-align:right;
+}
+.dropdown-content {
+	width:250px;
+	display:none;
+	position:absolute;
+	top:140px;
+	left:900px;
+	background-color:#333;
+	color:#CCC;
+	min-width:200px;
+}
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+#jiahao {
+	position:absolute;
+    left:1010px;
+    top:0px;
+    z-index:1;
+}

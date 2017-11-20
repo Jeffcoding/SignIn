@@ -1,0 +1,41 @@
+*{
+	padding:0;
+	margin: 0; 
+	font-size: 30px;
+}
+
+#mainpage{
+	height: 1800px;/*高度应该自适应吧*/
+	width: 1080px;
+	background-color: rgb(236,237,242); 
+	margin: 0 auto;
+}
+#phonenumber{
+	float:left;
+	height: 100px;
+	width: 1080px;
+	margin:2px;
+	border: none;
+}
+#identify{
+	float:left;
+	height: 100px;
+	width: 700px;
+	margin:2px;
+	border: none;
+}
+#send{
+	float:left;
+	font-weight: bold;
+	background-color: #fff;
+	border: none;
+}
+#submit{
+	display: block;
+	margin: 30px auto;
+	font-size: 50px;
+	background-color: rgb(31,186,242);
+	width: 300px;
+	border: none;
+	border-radius: 10px;
+}
